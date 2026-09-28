@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biopesticide Transition Framework — Bangladesh</title>
+<meta name="description" content="Strategic policy framework for biopesticide transition and sustainable crop protection in Bangladesh.">
+<meta property="og:title" content="Biopesticide Transition Framework — Bangladesh">
+<meta property="og:description" content="A phased policy blueprint for sustainable crop protection.">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode:'class',
+  theme:{extend:{colors:{
+    primary:{50:'hsl(160,70%,95%)',100:'hsl(160,70%,88%)',200:'hsl(160,70%,75%)',300:'hsl(160,70%,62%)',400:'hsl(160,70%,50%)',500:'hsl(160,70%,40%)',600:'hsl(160,70%,33%)',700:'hsl(160,70%,26%)',800:'hsl(160,70%,17%)',900:'hsl(160,70%,11%)'},
+    accent:{100:'hsl(190,65%,88%)',300:'hsl(190,65%,65%)',400:'hsl(190,65%,58%)',500:'hsl(190,65%,50%)',600:'hsl(190,65%,43%)',700:'hsl(190,65%,34%)',900:'hsl(190,65%,18%)'}
+  }}}
+}
+</script>
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<style>
+  html{scroll-behavior:smooth}
+  body{padding-bottom:110px}
+  @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}html{scroll-behavior:auto}}
+  .btn-i{transition:all .18s ease-out}
+  .btn-i:hover{transform:scale(1.06)}
+  .btn-i:active{transform:scale(.94)}
+  .card-i{transition:all .25s ease-out;border:1px solid transparent}
+  .card-i:hover{box-shadow:0 18px 30px -8px rgba(0,0,0,.15);transform:translateY(-3px)}
+  .dark .card-i:hover{box-shadow:0 18px 30px -8px rgba(0,0,0,.6)}
+  .tts-active{outline:3px solid hsl(160,70%,45%);outline-offset:4px;border-radius:.75rem;transition:outline .2s}
+  .toast{animation:pop .25s ease-out}
+  @keyframes pop{from{transform:translateY(12px);opacity:0}to{transform:translateY(0);opacity:1}}
+  .spin{animation:spin 1s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @media print{
+    header,footer,.no-print,#toolbar,#ttsToast,#shareModal{display:none!important}
+    body{padding:0;background:#fff;color:#000}
+    section{break-inside:avoid;box-shadow:none!important}
+  }
+</style>
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 antialiased">
+
+<!-- reading progress -->
+<div id="progressBar" class="fixed top-0 left-0 h-1 bg-primary-500 z-[70] transition-all duration-200" style="width:0%"></div>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<header class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-gray-50/90 dark:bg-gray-900/90 border-b border-primary-500/20 no-print">
+  <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <h1 class="text-lg font-bold text-primary-700 dark:text-primary-300 flex items-center gap-2">
+      <i data-lucide="leaf" class="w-5 h-5"></i><span data-i18n>Biopesticide Transition Framework</span>
+    </h1>
+    <div class="hidden md:flex items-center gap-5 text-sm">
+      <a href="#context" class="text-primary-600 dark:text-primary-400 hover:underline" data-i18n>Context</a>
+      <a href="#regulatory" class="text-primary-600 dark:text-primary-400 hover:underline" data-i18n>Regulatory</a>
+      <a href="#supply" class="text-primary-600 dark:text-primary-400 hover:underline" data-i18n>Supply Chain</a>
+      <a href="#adoption" class="text-primary-600 dark:text-primary-400 hover:underline" data-i18n>Adoption</a>
+      <a href="#implementation" class="text-primary-600 dark:text-primary-400 hover:underline" data-i18n>Roadmap</a>
+      <button onclick="toggleDark()" class="btn-i p-2 rounded-lg bg-primary-100 dark:bg-primary-800 text-primary-600 dark:text-primary-300" aria-label="Toggle dark mode">
+        <i data-lucide="sun" id="sunI" class="w-4 h-4"></i><i data-lucide="moon" id="moonI" class="w-4 h-4 hidden"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main class="min-h-screen pt-20">
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <section id="home" class="py-16 bg-primary-50/60 dark:bg-gray-900">
+    <div class="max-w-4xl mx-auto px-6 text-center" data-aos="fade-up">
+      <span class="inline-block px-3 py-1 rounded-full bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-300 text-xs font-semibold mb-5" data-i18n>POLICY BRIEF · SEPTEMBER 2026</span>
+      <h2 class="text-3xl md:text-5xl font-bold mb-5 text-primary-800 dark:text-primary-200" data-i18n>From Dependency to Resilience: A Phased Blueprint for Bangladesh's Biopesticide Transition</h2>
+      <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto" data-i18n>A coordinated policy response integrating regulatory reform, supply-chain development, and farmer adoption — with short-term (1–3 yr) and medium-term (5–10 yr) interventions for government policymakers.</p>
+      <div class="grid sm:grid-cols-3 gap-4 mt-10">
+        <div class="card-i p-5 bg-white dark:bg-gray-800 rounded-xl shadow"><i data-lucide="shield-check" class="w-8 h-8 text-primary-500 mx-auto mb-2"></i><h3 class="font-semibold text-primary-700 dark:text-primary-300" data-i18n>Regulatory Reform</h3><p class="text-sm text-gray-500 dark:text-gray-400 mt-1" data-i18n>Fast-track registration & harmonized standards</p></div>
+        <div class="card-i p-5 bg-white dark:bg-gray-800 rounded-xl shadow"><i data-lucide="factory" class="w-8 h-8 text-accent-500 mx-auto mb-2"></i><h3 class="font-semibold text-accent-700 dark:text-accent-300" data-i18n>Supply Chain</h3><p class="text-sm text-gray-500 dark:text-gray-400 mt-1" data-i18n>Manufacturing incentives & cold-chain logistics</p></div>
+        <div class="card-i p-5 bg-white dark:bg-gray-800 rounded-xl shadow"><i data-lucide="users" class="w-8 h-8 text-primary-500 mx-auto mb-2"></i><h3 class="font-semibold text-primary-700 dark:text-primary-300" data-i18n>Farmer Adoption</h3><p class="text-sm text-gray-500 dark:text-gray-400 mt-1" data-i18n>Extension services & behavioral incentives</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CONTEXT ═══════════ -->
+  <section id="context" class="py-16 bg-white/80 dark:bg-gray-900" data-tts>
+    <div class="max-w-4xl mx-auto px-6" data-aos="fade-up">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl md:text-3xl font-bold text-primary-700 dark:text-primary-300" data-i18n>Current Agricultural Context & Challenges</h2>
+        <button onclick="readSection(this)" class="btn-i no-print p-2 rounded-lg bg-primary-100 dark:bg-primary-800 text-primary-600 dark:text-primary-300" title="Listen to this section"><i data-lucide="volume-2" class="w-4 h-4"></i></button>
+      </div>
+      <div class="space-y-5">
+        <p class="text-gray-700 dark:text-gray-300" data-i18n>Bangladesh's legal framework is anchored in the Pesticide Act of 2018, which mandates registration, licensing, labeling, and safe handling, overseen by the Pesticide Technical Advisory Committee (PTAC). However, as of mid-2026, no final rules have been published from recommendations made by the FAO in 2024 — indicating weak implementation and enforcement of existing legislation.</p>
+        <div class="border-l-4 border-amber-500 bg-amber-50/60 dark:bg-amber-900/25 rounded-r-lg p-4">
+          <p class="text-sm font-medium text-amber-900 dark:text-amber-100" data-i18n>⚠ Critical Challenge: A survey found that 68% of farmers had used pesticides officially banned in Bangladesh, while 93% were unaware of these bans or the associated health risks.</p>
+        </div>
+        <p class="text-gray-700 dark:text-gray-300" data-i18n>Researchers at Bangladesh Agricultural University identified 25 highly hazardous pesticides registered for use in Bangladesh according to the FAO. Ten of these — including paraquat, glyphosate, chlorpyrifos, and carbendazim — are widely used and linked to cancer, kidney failure, heart disease, and reproductive disorders.</p>
+        <div class="border-l-4 border-primary-500 bg-primary-50/60 dark:bg-primary-900/25 rounded-r-lg p-4">
+          <p class="text-sm font-medium text-primary-900 dark:text-primary-100" data-i18n>📈 Alarming Trend: Insecticide application has surged by more than 80% in the past five years, yet pests still damage crops and harvests remain uncertain. Meanwhile, post-harvest losses cost an estimated $2.4 billion annually, driven largely by the absence of cold-chain infrastructure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ REGULATORY ═══════════ -->
+  <section id="regulatory" class="py-16 bg-primary-50/50 dark:bg-gray-800" data-tts>
+    <div class="max-w-4xl mx-auto px-6" data-aos="fade-up">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl md:text-3xl font-bold text-primary-700 dark:text-primary-300" data-i18n>Regulatory Reform & Registration Pathways</h2>
+        <button onclick="readSection(this)" class="btn-i no-print p-2 rounded-lg bg-primary-100 dark:bg-primary-800 text-primary-600 dark:text-primary-300" title="Listen"><i data-lucide="volume-2" class="w-4 h-4"></i></button>
+      </div>
+      <p class="text-gray-700 dark:text-gray-300 mb-6" data-i18n>A key barrier is the absence of a dedicated regulatory framework for biopesticides, creating uncertainty in registration and approval. Complex, time-consuming approval processes and stringent data requirements deter manufacturers from entering the market.</p>
+
+      <div class="space-y-4">
+        <div class="card-i bg-white dark:bg-gray-900 rounded-xl p-5 shadow">
+          <h3 class="font-semibold text-primary-700 dark:text-primary-300 flex items-center gap-2 mb-3"><i data-lucide="clock" class="w-5 h-5"></i><span data-i18n>Short-term Actions (1–3 Years)</span></h3>
+          <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300 list-none">
+            <li class="flex gap-2" data-i18n><i data-lucide="check-circle" class="w-4 h-4 text-primary-500 mt-0.5 shrink-0"></i>Finalize updated Pesticide Rules under the 2018 Act in collaboration with FAO, incorporating international best practices.</li>
+            <li class="flex gap-2" data-i18n><i data-lucide="check-circle" class="w-4 h-4 text-primary-500 mt-0.5 shrink-0"></i>Establish a transparent registration process with rigorous risk assessments to keep highly hazardous pesticides out of the market.</li>
+            <li class="flex gap-2" data-i18n><i data-lucide="check-circle" class="w-4 h-4 text-primary-500 mt-0.5 shrink-0"></i>Align national frameworks with ASEAN Guidelines on Biological Control Agents to reduce trade barriers.</li>
+          </ul>
+        </div>
+        <div class="card-i bg-white dark:bg-gray-900 rounded-xl p-5 shadow">
+          <h3 class="font-semibold text-accent-700 dark:text-accent-300 flex items-center gap-2 mb-3"><i data-lucide="building-2" class="w-5 h-5"></i><span data-i18n>Medium-term Structural Reforms (5–10 Years)</span></h3>
+          <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300 list-none">
+            <li class="flex gap-2" data-i18n><i data-lucide="check-circle" class="w-4 h-4 text-accent-500 mt-0.5 shrink-0"></i>Establish a stand-alone definition of biopesticides in national law, or a dedicated chapter, so they are not subsumed under chemical-pesticide rules.</li>
+            <li class="flex gap-2" data-i18n><i data-lucide="check-circle" class="w-4 h-4 text-accent-500 mt-0.5 shrink-0"></i>Introduce flexible registration categories: provisional, emergency-use, and minor-use registration.</li>
+            <li class="flex gap-2" data-i18n><i data-lucide="check-circle" class="w-4 h-4 text-accent-500 mt-0.5 shrink-0"></i>Facilitate parallel and equivalent registration for products approved by recognized authorities (US, EU, UK, Japan, Australia).</li>
+            <li class="flex gap-2" data-i18n><i data-lucide="check-circle" class="w-4 h-4 text-accent-500 mt-0.5 shrink-0"></i>Set clear decision timeframes (≤120 days) and robust post-registration stewardship, including mandatory sales reporting and revocation mechanisms.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ SUPPLY CHAIN ═══════════ -->
+  <section id="supply" class="py-16 bg-white/80 dark:bg-gray-900" data-tts>
+    <div class="max-w-4xl mx-auto px-6" data-aos="fade-up">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl md:text-3xl font-bold text-primary-700 dark:text-primary-300" data-i18n>Supply Chain & Manufacturing Incentives</h2>
+        <button onclick="readSection(this)" class="btn-i no-print p-2 rounded-lg bg-primary-100 dark:bg-primary-800 text-primary-600 dark:text-primary-300" title="Listen"><i data-lucide="volume-2" class="w-4 h-4"></i></button>
+      </div>
+      <p class="text-gray-700 dark:text-gray-300 mb-6" data-i18n>Bangladesh's agro-input marketing suffers from a fragmented supply chain, limited transportation, high costs, and inefficient distribution. Biopesticides' specific storage needs and shorter shelf lives complicate distribution — especially in remote areas — making cold-chain investment essential.</p>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="card-i bg-primary-50/60 dark:bg-gray-800 rounded-xl p-5">
+          <h3 class="font-semibold text-primary-700 dark:text-primary-300 mb-3" data-i18n>Short-term (1–3 Years)</h3>
+          <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+            <li data-i18n>• Train local manufacturers in production techniques and business-model development.</li>
+            <li data-i18n>• Partner with distributors and cooperatives to improve last-mile accessibility.</li>
+            <li data-i18n>• Engage aggregators and market actors so the whole chain understands biopesticide value.</li>
+          </ul>
+        </div>
+        <div class="card-i bg-accent-100/40 dark:bg-gray-800 rounded-xl p-5">
+          <h3 class="font-semibold text-accent-700 dark:text-accent-300 mb-3" data-i18n>Medium-term (5–10 Years)</h3>
+          <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+            <li data-i18n>• Standardize production protocols for consistent quality.</li>
+            <li data-i18n>• Establish a national biobank of microbial stocks (Trichoderma, Bt).</li>
+            <li data-i18n>• Build climate-controlled storage & distribution nationwide.</li>
+            <li data-i18n>• Grow private-sector capacity via public-private partnerships.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ ADOPTION ═══════════ -->
+  <section id="adoption" class="py-16 bg-accent-100/20 dark:bg-gray-800" data-tts>
+    <div class="max-w-4xl mx-auto px-6" data-aos="fade-up">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl md:text-3xl font-bold text-accent-700 dark:text-accent-300" data-i18n>Farmer Adoption & Extension Services</h2>
+        <button onclick="readSection(this)" class="btn-i no-print p-2 rounded-lg bg-accent-100 dark:bg-gray-700 text-accent-700 dark:text-accent-300" title="Listen"><i data-lucide="volume-2" class="w-4 h-4"></i></button>
+      </div>
+      <p class="text-gray-700 dark:text-gray-300 mb-6" data-i18n>Farmers often question biopesticide efficacy due to slower action and environment-sensitive performance. Higher costs and lack of subsidies make them less attractive. Yet engagement with agricultural extension services is associated with a 4.2% increase in technology adoption and a 2.4% decrease in production risk among rice farmers.</p>
+      <div class="card-i bg-white dark:bg-gray-900 rounded-xl p-5 shadow mb-4">
+        <h3 class="font-semibold text-primary-700 dark:text-primary-300 mb-3 flex items-center gap-2"><i data-lucide="smartphone" class="w-5 h-5"></i><span data-i18n>Digital Extension (e-Extension)</span></h3>
+        <p class="text-sm text-gray-700 dark:text-gray-300" data-i18n>CABI and the Department of Agricultural Extension (DAE) are piloting Bangladesh's first Strategic Action Plan for e-Extension — a three-tiered framework (National Desks, Regional Hubs, Satellite Hubs) delivering real-time advice via SMS, IVR, mobile apps, and platforms like PlantwisePlus, BAMIS, and Krishoker Janala.</p>
+      </div>
+      <div class="border-l-4 border-accent-500 bg-accent-100/40 dark:bg-gray-700/40 rounded-r-lg p-4">
+        <p class="text-sm font-medium text-accent-900 dark:text-accent-100" data-i18n>💰 Economic Incentives: Implement subsidies, tax breaks, and low-interest credit to offset higher costs and demonstrate long-term benefits like reduced pest resistance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ ROADMAP ═══════════ -->
+  <section id="implementation" class="py-16 bg-white/80 dark:bg-gray-900" data-tts>
+    <div class="max-w-4xl mx-auto px-6" data-aos="fade-up">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl md:text-3xl font-bold text-primary-700 dark:text-primary-300" data-i18n>Implementation Roadmap</h2>
+        <button onclick="readSection(this)" class="btn-i no-print p-2 rounded-lg bg-primary-100 dark:bg-primary-800 text-primary-600 dark:text-primary-300" title="Listen"><i data-lucide="volume-2" class="w-4 h-4"></i></button>
+      </div>
+      <p class="text-gray-700 dark:text-gray-300 mb-6" data-i18n>Interventions must be sequenced: regulatory clarity precedes supply-chain development, which enables effective farmer adoption through strengthened extension services.</p>
+      <div class="grid sm:grid-cols-3 gap-4">
+        <div class="card-i bg-primary-50/60 dark:bg-gray-800 rounded-xl p-5 text-center"><p class="text-3xl font-bold text-primary-600 dark:text-primary-400">970+</p><p class="text-sm text-gray-600 dark:text-gray-400 mt-1" data-i18n>Registered biopesticide products (India benchmark)</p></div>
+        <div class="card-i bg-primary-50/60 dark:bg-gray-800 rounded-xl p-5 text-center"><p class="text-3xl font-bold text-accent-600 dark:text-accent-400">11.4%</p><p class="text-sm text-gray-600 dark:text-gray-400 mt-1" data-i18n>Biopesticide adoption among paddy farmers</p></div>
+        <div class="card-i bg-primary-50/60 dark:bg-gray-800 rounded-xl p-5 text-center"><p class="text-3xl font-bold text-primary-600 dark:text-primary-400">13%</p><p class="text-sm text-gray-600 dark:text-gray-400 mt-1" data-i18n>Yield improvement from biopesticide adoption</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CONCLUSION ═══════════ -->
+  <section id="conclusion" class="py-16 bg-primary-50/50 dark:bg-gray-900" data-tts>
+    <div class="max-w-4xl mx-auto px-6" data-aos="fade-up">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl md:text-3xl font-bold text-primary-700 dark:text-primary-300" data-i18n>Conclusion & Strategic Recommendations</h2>
+        <button onclick="readSection(this)" class="btn-i no-print p-2 rounded-lg bg-primary-100 dark:bg-primary-800 text-primary-600 dark:text-primary-300" title="Listen"><i data-lucide="volume-2" class="w-4 h-4"></i></button>
+      </div>
+      <p class="text-gray-700 dark:text-gray-300 mb-5" data-i18n>Pesticide use growth in Bangladesh slowed dramatically — from a 297% increase (2001–2010) to only about 17% (2010–2023) — with rising biopesticide use cited as a contributing factor. This framework provides a comprehensive roadmap balancing immediate regulatory reforms with long-term structural transformation for food security, environmental sustainability, and farmer prosperity.</p>
+      <div class="card-i bg-white dark:bg-gray-800 rounded-xl p-6 shadow">
+        <h3 class="font-semibold text-primary-700 dark:text-primary-300 mb-4" data-i18n>Key Recommendations</h3>
+        <ul class="space-y-3 text-sm text-gray-700 dark:text-gray-300">
+          <li class="flex gap-2" data-i18n><i data-lucide="arrow-right" class="w-4 h-4 text-primary-500 mt-0.5 shrink-0"></i><span><b>Prioritize Regulatory Clarity:</b> finalize biopesticide-specific rules within 2 years.</span></li>
+          <li class="flex gap-2" data-i18n><i data-lucide="arrow-right" class="w-4 h-4 text-primary-500 mt-0.5 shrink-0"></i><span><b>Invest in Human Capital:</b> train 10,000+ extension workers within 5 years.</span></li>
+          <li class="flex gap-2" data-i18n><i data-lucide="arrow-right" class="w-4 h-4 text-primary-500 mt-0.5 shrink-0"></i><span><b>Build Supply-Chain Resilience:</b> partner with 500+ local distributors.</span></li>
+          <li class="flex gap-2" data-i18n><i data-lucide="arrow-right" class="w-4 h-4 text-primary-500 mt-0.5 shrink-0"></i><span><b>Enable Financial Access:</b> targeted subsidies and low-interest credit.</span></li>
+          <li class="flex gap-2" data-i18n><i data-lucide="arrow-right" class="w-4 h-4 text-primary-500 mt-0.5 shrink-0"></i><span><b>Foster Innovation:</b> establish biopesticide innovation hubs for tropical formulations.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="bg-primary-900 dark:bg-gray-950 text-primary-100 py-10 no-print">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <p class="text-sm" data-i18n>© 2026 Biopesticide Transition Framework for Bangladesh · Educational policy research material.</p>
+  </div>
+</footer>
+
+<!-- ═══════════ FLOATING TOOLBAR ═══════════ -->
+<div id="toolbar" class="no-print fixed bottom-4 inset-x-0 z-[60] flex justify-center px-4">
+  <div class="flex items-center gap-1 sm:gap-2 bg-white/90 dark:bg-gray-800/90 backdrop-blur-md shadow-2xl rounded-2xl px-3 py-2 border border-primary-500/20">
+    <!-- Download -->
+    <div class="relative" x-data="{open:false}">
+      <button @click="open=!open" class="btn-i flex flex-col items-center px-2 py-1 rounded-xl hover:bg-primary-50 dark:hover:bg-gray-700" title="Download">
+        <i data-lucide="download" class="w-5 h-5 text-primary-600 dark:text-primary-300"></i>
+        <span class="text-[10px] mt-0.5 text-gray-600 dark:text-gray-300" data-i18n>Save</span>
+      </button>
+      <div x-show="open" @click.outside="open=false" x-transition class="absolute bottom-full mb-2 right-0 w-44 bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
+        <button @click="downloadHTML();open=false" class="w-full text-left px-4 py-2.5 text-sm hover:bg-primary-50 dark:hover:bg-gray-700 flex items-center gap-2"><i data-lucide="file-code" class="w-4 h-4"></i><span data-i18n>Download HTML</span></button>
+        <button @click="window.print();open=false" class="w-full text-left px-4 py-2.5 text-sm hover:bg-primary-50 dark:hover:bg-gray-700 flex items-center gap-2"><i data-lucide="printer" class="w-4 h-4"></i><span data-i18n>Print / PDF</span></button>
+      </div>
+    </div>
+    <!-- Translate -->
+    <div class="relative" x-data="{open:false}">
+      <button @click="open=!open" class="btn-i flex flex-col items-center px-2 py-1 rounded-xl hover:bg-primary-50 dark:hover:bg-gray-700" title="Translate">
+        <span id="langSpin"><i data-lucide="languages" class="w-5 h-5 text-accent-600 dark:text-accent-300"></i></span>
+        <span class="text-[10px] mt-0.5 text-gray-600 dark:text-gray-300" data-i18n>Translate</span>
+      </button>
+      <div x-show="open" @click.outside="open=false" x-transition class="absolute bottom-full mb-2 right-0 w-40 bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden max-h-64 overflow-y-auto">
+        <template x-for="l in langs" :key="l.code">
+          <button @click="setLang(l.code);open=false" class="w-full text-left px-4 py-2 text-sm hover:bg-primary-50 dark:hover:bg-gray-700" x-text="l.label"></button>
+        </template>
+      </div>
+    </div>
+    <!-- Share -->
+    <button onclick="openShare()" class="btn-i flex flex-col items-center px-2 py-1 rounded-xl hover:bg-primary-50 dark:hover:bg-gray-700" title="Share">
+      <i data-lucide="share-2" class="w-5 h-5 text-primary-600 dark:text-primary-300"></i>
+      <span class="text-[10px] mt-0.5 text-gray-600 dark:text-gray-300" data-i18n>Share</span>
+    </button>
+    <!-- TTS -->
+    <button onclick="toggleReadAll()" class="btn-i flex flex-col items-center px-2 py-1 rounded-xl hover:bg-primary-50 dark:hover:bg-gray-700" title="Read aloud">
+      <i data-lucide="volume-2" id="ttsIcon" class="w-5 h-5 text-primary-600 dark:text-primary-300"></i>
+      <span class="text-[10px] mt-0.5 text-gray-600 dark:text-gray-300" data-i18n>Listen</span>
+    </button>
+    <button onclick="stopTTS()" class="btn-i flex flex-col items-center px-2 py-1 rounded-xl hover:bg-red-50 dark:hover:bg-gray-700" title="Stop">
+      <i data-lucide="square" class="w-5 h-5 text-red-500"></i>
+      <span class="text-[10px] mt-0.5 text-gray-600 dark:text-gray-300" data-i18n>Stop</span>
+    </button>
+  </div>
+</div>
+
+<!-- TTS status toast -->
+<div id="ttsToast" class="no-print hidden toast fixed bottom-24 inset-x-0 z-[60] flex justify-center pointer-events-none">
+  <div class="bg-gray-900/90 dark:bg-gray-100/90 text-white dark:text-gray-900 px-4 py-2 rounded-full text-sm shadow-lg flex items-center gap-2">
+    <i data-lucide="audio-lines" class="w-4 h-4"></i><span id="ttsMsg">Reading…</span>
+  </div>
+</div>
+
+<!-- ═══════════ SHARE MODAL ═══════════ -->
+<div id="shareModal" class="no-print hidden fixed inset-0 z-[80] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm" onclick="if(event.target===this)closeShare()">
+  <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl w-full max-w-sm p-6 toast">
+    <div class="flex justify-between items-center mb-4">
+      <h3 class="font-bold text-lg text-primary-700 dark:text-primary-300" data-i18n>Share this brief</h3>
+      <button onclick="closeShare()" class="btn-i p-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"><i data-lucide="x" class="w-5 h-5"></i></button>
+    </div>
+    <div class="flex justify-center mb-4"><div id="qrBox" class="p-2 bg-white rounded-xl border border-gray-200"></div></div>
+    <p id="shareUrl" class="text-xs text-center text-gray-500 dark:text-gray-400 break-all mb-4 select-all"></p>
+    <div class="grid grid-cols-2 gap-2 mb-3">
+      <button onclick="copyLink()" class="btn-i flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-primary-500 text-white text-sm"><i data-lucide="copy" class="w-4 h-4"></i><span data-i18n>Copy link</span></button>
+      <button onclick="nativeShare()" class="btn-i flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-accent-500 text-white text-sm"><i data-lucide="share" class="w-4 h-4"></i><span data-i18n>More…</span></button>
+    </div>
+    <div class="grid grid-cols-3 gap-2">
+      <a id="shX" target="_blank" rel="noopener" class="btn-i flex items-center justify-center py-2 rounded-lg bg-gray-900 text-white text-xs">X</a>
+      <a id="shFb" target="_blank" rel="noopener" class="btn-i flex items-center justify-center py-2 rounded-lg bg-blue-600 text-white text-xs">Facebook</a>
+      <a id="shLi" target="_blank" rel="noopener" class="btn-i flex items-center justify-center py-2 rounded-lg bg-sky-700 text-white text-xs">LinkedIn</a>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ═══════════ STATE ═══════════ */
+const langs=[
+ {code:'en',label:'English',tts:'en-US'},
+ {code:'bn',label:'বাংলা',tts:'bn-BD'},
+ {code:'hi',label:'हिन्दी',tts:'hi-IN'},
+ {code:'ar',label:'العربية',tts:'ar-SA'},
+ {code:'zh',label:'中文',tts:'zh-CN'},
+ {code:'es',label:'Español',tts:'es-ES'},
+ {code:'fr',label:'Français',tts:'fr-FR'},
+ {code:'ru',label:'Русский',tts:'ru-RU'}
+];
+let curLang='en', ttsRate=1, ttsPlaying=false, readAllQueue=[], readAllIdx=0;
+const originals=new Map();
+const cache=JSON.parse(localStorage.getItem('bpTrans')||'{}');
+
+/* ═══════════ DARK MODE ═══════════ */
+function toggleDark(){
+  document.body.classList.toggle('dark');
+  const d=document.body.classList.contains('dark');
+  document.getElementById('sunI').classList.toggle('hidden',d);
+  document.getElementById('moonI').classList.toggle('hidden',!d);
+}
+
+/* ═══════════ DOWNLOAD ═══════════ */
+function downloadHTML(){
+  const blob=new Blob(['<!DOCTYPE html>\n'+document.documentElement.outerHTML],{type:'text/html'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='biopesticide-framework-bangladesh.html';
+  a.click(); URL.revokeObjectURL(a.href);
+  toast('HTML file downloaded');
+}
+
+/* ═══════════ TRANSLATION (MyMemory API + cache) ═══════════ */
+function decodeEntities(s){const t=document.createElement('textarea');t.innerHTML=s;return t.value;}
+async function translateChunk(text,target){
+  const key=target+':'+text;
+  if(cache[key]) return cache[key];
+  const url='https://api.mymemory.translated.net/get?q='+encodeURIComponent(text)+'&langpair=en|'+target;
+  const r=await fetch(url); const d=await r.json();
+  if(d.responseStatus===200&&d.responseData&&d.responseData.translatedText){
+    const out=decodeEntities(d.responseData.translatedText);
+    try{cache[key]=out;localStorage.setItem('bpTrans',JSON.stringify(cache));}catch(e){}
+    return out;
+  }
+  throw new Error('translation failed');
+}
+function chunkText(text,max=450){
+  const sentences=text.match(/[^।.!?]+[।.!?]*/g)||[text];
+  const chunks=[]; let cur='';
+  for(const s of sentences){
+    if((cur+s).length>max){ if(cur)chunks.push(cur); cur=s.length>max?s.slice(0,max):s; }
+    else cur+=s;
+  }
+  if(cur)chunks.push(cur);
+  return chunks;
+}
+async function translateElement(el,target){
+  if(!originals.has(el)) originals.set(el,el.innerHTML);
+  const text=el.innerText.trim();
+  if(!text)return;
+  try{
+    const parts=await Promise.all(chunkText(text).map(c=>translateChunk(c,target)));
+    el.textContent=parts.join(' ');
+  }catch(e){ /* keep original on failure */ }
+}
+async function setLang(code){
+  curLang=code;
+  const spin=document.getElementById('langSpin');
+  if(code==='en'){
+    originals.forEach((html,el)=>{el.innerHTML=html;});
+    document.documentElement.setAttribute('dir','ltr');
+    document.documentElement.setAttribute('lang','en');
+    lucide.createIcons(); toast('English restored');
+    return;
+  }
+  document.documentElement.setAttribute('dir', code==='ar'?'rtl':'ltr');
+  document.documentElement.setAttribute('lang',code);
+  spin.innerHTML='<i data-lucide="loader-2" class="w-5 h-5 text-accent-500 spin"></i>';
+  lucide.createIcons();
+  toast('Translating…');
+  const els=[...document.querySelectorAll('[data-i18n]')];
+  for(let i=0;i<els.length;i+=6){ // batches of 6 to respect rate limits
+    await Promise.all(els.slice(i,i+6).map(el=>translateElement(el,code)));
+  }
+  spin.innerHTML='<i data-lucide="languages" class="w-5 h-5 text-accent-600"></i>';
+  lucide.createIcons();
+  toast('Translated to '+langs.find(l=>l.code===code).label);
+}
+
+/* ═══════════ TTS (Web Speech API) ═══════════ */
+function pickVoice(){
+  const ttsCode=(langs.find(l=>l.code===curLang)||{}).tts||'en-US';
+  const voices=speechSynthesis.getVoices();
+  return voices.find(v=>v.lang===ttsCode)||voices.find(v=>v.lang.startsWith(curLang))||null;
+}
+function speakText(text,onEnd,highlightEl){
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(text);
+  u.rate=ttsRate; const v=pickVoice(); if(v)u.voice=v;
+  u.lang=(langs.find(l=>l.code===curLang)||{}).tts||'en-US';
+  if(highlightEl){highlightEl.classList.add('tts-active');u.onstart=()=>highlightEl.scrollIntoView({behavior:'smooth',block:'center'});}
+  u.onend=()=>{if(highlightEl)highlightEl.classList.remove('tts-active');if(onEnd)onEnd();};
+  u.onerror=()=>{if(highlightEl)highlightEl.classList.remove('tts-active');if(onEnd)onEnd();};
+  speechSynthesis.speak(u);
+}
+function readSection(btn){
+  const section=btn.closest('section');
+  const clone=section.cloneNode(true);
+  clone.querySelectorAll('button,.no-print').forEach(n=>n.remove());
+  stopTTS(true);
+  toast('Reading section…');
+  speakText(clone.innerText,()=>hideToast(),section);
+}
+function toggleReadAll(){
+  if(ttsPlaying){ speechSynthesis.paused?speechSynthesis.resume():speechSynthesis.pause(); return; }
+  const sections=[...document.querySelectorAll('[data-tts]')];
+  readAllQueue=sections.map(s=>{const c=s.cloneNode(true);c.querySelectorAll('button,.no-print').forEach(n=>n.remove());return{el:s,text:c.innerText.trim()};}).filter(x=>x.text);
+  readAllIdx=0; ttsPlaying=true;
+  document.getElementById('ttsIcon').setAttribute('data-lucide','pause');lucide.createIcons();
+  toast('Reading full document…');
+  readNext();
+}
+function readNext(){
+  if(readAllIdx>=readAllQueue.length){stopTTS();return;}
+  const item=readAllQueue[readAllIdx++];
+  speakText(item.text,readNext,item.el);
+}
+function stopTTS(silent){
+  speechSynthesis.cancel(); ttsPlaying=false;
+  document.querySelectorAll('.tts-active').forEach(e=>e.classList.remove('tts-active'));
+  const ic=document.getElementById('ttsIcon'); if(ic){ic.setAttribute('data-lucide','volume-2');lucide.createIcons();}
+  if(!silent)toast('Stopped');
+}
+function toast(msg){
+  const t=document.getElementById('ttsToast');
+  document.getElementById('ttsMsg').textContent=msg;
+  t.classList.remove('hidden');
+  clearTimeout(t._h); t._h=setTimeout(hideToast,2600);
+}
+function hideToast(){document.getElementById('ttsToast').classList.add('hidden');}
+
+/* ═══════════ SHARE ═══════════ */
+function pageURL(){return location.href;}
+function openShare(){
+  const url=pageURL();
+  document.getElementById('shareUrl').textContent=url;
+  const enc=encodeURIComponent(url), title=encodeURIComponent(document.title);
+  document.getElementById('shX').href='https://twitter.com/intent/tweet?url='+enc+'&text='+title;
+  document.getElementById('shFb').href='https://www.facebook.com/sharer/sharer.php?u='+enc;
+  document.getElementById('shLi').href='https://www.linkedin.com/sharing/share-offsite/?url='+enc;
+  const box=document.getElementById('qrBox');
+  box.innerHTML='<img width="160" height="160" alt="QR code" src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data='+enc+'">';
+  document.getElementById('shareModal').classList.remove('hidden');
+}
+function closeShare(){document.getElementById('shareModal').classList.add('hidden');}
+function copyLink(){
+  navigator.clipboard.writeText(pageURL()).then(()=>toast('Link copied!')).catch(()=>{
+    const i=document.getElementById('shareUrl');const r=document.createRange();r.selectNode(i);
+    getSelection().removeAllRanges();getSelection().addRange(r);document.execCommand('copy');toast('Link copied!');
+  });
+}
+function nativeShare(){
+  if(navigator.share){navigator.share({title:document.title,text:'Biopesticide Transition Framework for Bangladesh',url:pageURL()}).catch(()=>{});}
+  else copyLink();
+}
+
+/* ═══════════ PROGRESS BAR ═══════════ */
+window.addEventListener('scroll',()=>{
+  const st=window.pageYOffset, h=document.documentElement.scrollHeight-window.innerHeight;
+  document.getElementById('progressBar').style.width=(h?st/h*100:0)+'%';
+});
+
+/* ═══════════ INIT ═══════════ */
+document.addEventListener('DOMContentLoaded',()=>{
+  AOS.init({duration:700,once:true,offset:80});
+  lucide.createIcons();
+  if('speechSynthesis' in window){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>speechSynthesis.getVoices();}
+});
+</script>
+</body>
+</html>
